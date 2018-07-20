@@ -5,8 +5,15 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    pass    
-
+    first_val = self.value
+    current = self.value
+    next_val_left = self.left
+    while next_val_left is not None:
+      cb(current)
+      cb(self.left)
+      current = self.left.left
+    cb(self.right)
+    
   def breadth_first_for_each(self, cb):
     pass
 
